@@ -1,0 +1,14 @@
+  <%= render 'layouts/error'%>
+<h2 style='text-align: center;'>All Rooms</h2>
+<%= render 'layouts/error'%>
+<h2><%= link_to '', new_room_path, class: 'glyphicon glyphicon-plus size-20' %></h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Owner</th>
+    <th>Action</th>
+  </tr>
+<%= render @rooms %>
+</table>
+

@@ -1,0 +1,49 @@
+<div class='d-flex justify-content-center'>
+<div class='col-4'>
+  <%= form_with model: @book do |f|%>
+    <div>
+      <div class='mb-3'>
+        <%= f.label :title, style: 'display: block',class: 'form-label' %>
+        <%= f.text_field :title,class: 'form-control' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :year_published, style: 'display: block',class: 'form-label' %>
+        <%= f.text_field :year_published, class: 'form-control' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :isbn, style: 'display: block',class: 'form-label' %>
+        <%= f.text_field :isbn,class: 'form-control' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :price, style: 'display: block',class: 'form-label' %>
+        <%= f.text_field :price,class: 'form-control' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :out_of_print,class: 'form-label' %>
+        <%= f.check_box :out_of_print,class: 'form-check-input' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :views, style: 'display: block',class: 'form-label' %>
+        <%= f.text_field :views,class: 'form-control',value: '0' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :supplier_id, style: 'display: block',class: 'form-label' %>
+        <%= f.collection_select :supplier_id, Supplier.order(:id), :id, :name ,{},class: 'form-select' %>
+      </div>
+  
+      <div class='mb-3'>
+        <%= f.label :author_id, style: 'display: block',class: 'form-label' %>
+        <%= f.collection_select :author_id, Author.order(:id), :id, :last_name,{},class: 'form-select'  %>
+      </div>
+  
+      <%= f.submit 'Complete', class: 'btn btn-success w-100' %>
+    </div>
+  <% end %>
+</div>
+</div>

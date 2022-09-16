@@ -1,0 +1,15 @@
+<h2 style='text-align: center;'>All Users</h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>name</th>
+    <th>email</th>
+    <th>address</th>
+    <th>avatar</th>
+    <th>phone</th>
+<% if current_user.present?%>
+    <th>Action</th>
+<% end %>
+  </tr>
+<%= render @users %>
+</table>

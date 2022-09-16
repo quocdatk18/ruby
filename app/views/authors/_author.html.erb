@@ -1,0 +1,12 @@
+<tr>
+  <td><%= author.id %></td>
+  <td><%= link_to author.first_name, author %></td>
+  <td><%= author.last_name %></td>
+  <td>$ <%= author.title %></td>
+  <% if current_user.present?%>
+    <td>
+      <%= link_to 'Update', edit_author_path(author), method: :get, class: 'btn btn-primary' %>
+      <%= link_to 'Delete', author, method: :delete, data: { confirm: 'Delete this authors?'}, class: 'btn btn-danger' %>
+    </td>
+  <% end %>
+</tr>

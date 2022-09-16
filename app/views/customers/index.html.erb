@@ -1,0 +1,13 @@
+<h2 style="text-align: center;">All Customers</h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Email</th>
+  <% if current_user.present?%>
+    <th>Action</th>
+    <% end %>
+  </tr>
+<%= render @customers %>
+</table>

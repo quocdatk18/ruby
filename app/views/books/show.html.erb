@@ -1,0 +1,26 @@
+<h2 style='text-align: center;'>Details Book</h2>
+<% if @book.nil? %>
+  <h2>Undefined ID</h2>
+<% else %>
+  <table>
+  <tr>
+    <th>Title</th>
+    <th>Year Published</th>
+    <th>Isbn</th>
+    <th>Out of Print</th>
+    <th>View</th>
+    <th>Author</th>
+    <th>Suppier</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td><%= @book[:title] %></td>
+    <td><%= @book[:year_published] %></td>
+    <td><%= @book[:isbn] %></td>
+    <td><%= @book[:out_of_print] %></td>
+    <td><%= @book[:views] %></td>
+    <td><%= @book.author.first_name %> <%= @book.author.last_name %></td>
+    <td><%= @book.supplier.name %></td>
+    <td>$ <%= @book[:price] %></td>
+  </tr>
+<% end %>

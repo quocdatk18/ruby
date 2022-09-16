@@ -1,0 +1,10 @@
+<div class="message">
+  <% if (current_user.id == message.user.id) %>
+    <strong>Me:</strong> says:
+  <% else %>
+    <strong><%= message.user.name %></strong> says:
+  <% end %>
+  <p><%= message.content %></p>
+  <small>at <%= l message.created_at, format: :short %></small>
+  <hr>
+</div>

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= supplier.id %></td>
+  <td><%= supplier.name %></td>
+  <% if current_user.present?%>
+  <td>
+    <%= link_to 'Update', edit_supplier_path(supplier), method: :get, class: 'btn btn-primary' %>
+    <%= link_to 'Delete', supplier, method: :delete, data: { confirm: 'Delete this supplier?'}, class: 'btn btn-danger' %>
+  </td>
+  <% end %>
+</tr>

@@ -1,0 +1,13 @@
+</div>
+<h2 style='text-align: center;'>All Suppier</h2>
+<h2><%= link_to '', new_supplier_path, class: 'glyphicon glyphicon-plus size-20' %></h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+  <% if current_user.present?%>
+    <th>Action</th>
+  <% end %>
+  </tr>
+<%= render @suppliers %>
+</table>

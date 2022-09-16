@@ -1,0 +1,16 @@
+<h2 style='text-align: center;'>Author details</h2>
+<% if @books_author.nil? %>
+  <h2>Undefined ID</h2>
+<% else %>
+  <table>
+  <tr>
+    <th>STT</th>
+    <th>Title</th>
+    <th>Year Published</th>
+    <th>Isbn</th>
+    <th>Out of Print</th>
+    <th>View</th>
+    <th>Price</th>
+  </tr>
+  <%= render partial: 'books_author', collection: @books_author %>
+<% end %>

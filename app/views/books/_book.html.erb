@@ -1,0 +1,12 @@
+<tr>
+  <td><%= book.id %></td>
+  <td><%= link_to book.title, book%></td>
+  <td><%= book.year_published %></td>
+  <td>$ <%= book.price %></td>
+  <% if current_user.present?%>
+  <td>
+    <%= link_to 'Update', edit_book_path(book), method: :get, class: 'btn btn-primary' %>
+    <%= link_to 'Delete', book, method: :delete, data: { confirm: 'Delete this book?'}, class: 'btn btn-danger' %>
+  </td>
+  <% end %>
+</tr>

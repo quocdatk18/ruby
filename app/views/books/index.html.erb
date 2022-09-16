@@ -1,0 +1,14 @@
+<h2 style="text-align: center;">All Books</h2>
+<h2><%= link_to '', new_book_path, class: 'glyphicon glyphicon-plus size-20' %></h2>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Title</th>
+    <th>Year Published</th>
+    <th>Price</th>
+  <% if current_user.present?%>
+    <th>Action</th>
+  <% end %>
+  </tr>
+<%= render @books %>
+</table>
